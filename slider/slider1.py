@@ -15,4 +15,4 @@ def slide():
 
 my_button = Button(root, text = "Click", command = slide).pack()
 
-root.mainloop() #ends
+root.mainloop() #
