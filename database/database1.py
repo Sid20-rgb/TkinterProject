@@ -71,7 +71,7 @@ first_name = Label(root, text = "First Name")
 first_name.grid(row = 0, column = 0)
 e1 = Entry(root)
 e1.grid(row = 0, column= 1)
-
+#
 last_name = Label(root, text = "Last Name")
 last_name.grid(row= 2, column = 0)
 e2 = Entry(root)
