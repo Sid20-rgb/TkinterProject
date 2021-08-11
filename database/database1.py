@@ -17,8 +17,8 @@ c.execute(""" CREATE TABLE addresses(first_name text,
                                     state text,
                                     zipcode integer
                                     )""")
-print("Created a table.")
-'''
+print("Created a table.")'''
+
 def submit():
     conn = sqlite3.connect("recording_book.db")
 
@@ -45,7 +45,7 @@ def submit():
     e5.delete(0, END)
     e6.delete(0, END)
 
-'''
+
 def query():
     conn = sqlite3.connect("recording_book.db")
     
@@ -53,37 +53,49 @@ def query():
     
     c.execute("SELECT *, oid FROM addresses")
     
-    records = c.fetchall()
-    print(records)
+    record = c.fetchall()
+    print(record)
     
     print_record = " "
-    for record in reocrds:
-        print_record += str(record)+ "\n"
+    for records in record:
+        print_record += str(records)+ "\n"
     
     query_label = Label(root, text = print_record)
     query_label.grid(row = 8, column = 0, columnspan = 2)
     
     conn.commit()
-    conn.close()'''
+    conn.close()
 
 #desigining
-first_name = Label(root, text = "First Name").grid(row = 0, column = 0)
-e1 = Entry(root).grid(row = 0, column= 1)
+first_name = Label(root, text = "First Name")
+first_name.grid(row = 0, column = 0)
+e1 = Entry(root)
+e1.grid(row = 0, column= 1)
 
-last_name = Label(root, text = "Last Name").grid(row= 2, column = 0)
-e2 = Entry(root).grid(row = 2, column = 1)
+last_name = Label(root, text = "Last Name")
+last_name.grid(row= 2, column = 0)
+e2 = Entry(root)
+e2.grid(row = 2, column = 1)
 
-address = Label(root, text = "Address").grid(row = 3, column = 0)
-e3 = Entry(root).grid(row = 3, column = 1)
+address = Label(root, text = "Address")
+address.grid(row = 3, column = 0)
+e3 = Entry(root)
+e3.grid(row = 3, column = 1)
 
-city = Label(root, text = "City").grid(row = 4, column = 0)
-e4 = Entry(root).grid(row = 4, column = 1)
+city = Label(root, text = "City")
+city.grid(row = 4, column = 0)
+e4 = Entry(root)
+e4.grid(row = 4, column = 1)
 
-state = Label(root, text = "State").grid(row = 5, column = 0)
-e5 = Entry(root).grid(row = 5, column = 1)
+state = Label(root, text = "State")
+state.grid(row = 5, column = 0)
+e5 = Entry(root)
+e5.grid(row = 5, column = 1)
 
-zipcode = Label(root, text = "Zip Code").grid(row = 6, column = 0)
-e6 = Entry(root).grid(row =6, column = 1 )
+zipcode = Label(root, text = "Zip Code")
+zipcode.grid(row = 6, column = 0)
+e6 = Entry(root)
+e6.grid(row =6, column = 1 )
 
 button1= Button(root, text = "Submit", command = submit)
 button1.grid(row = 7, column = 1)
